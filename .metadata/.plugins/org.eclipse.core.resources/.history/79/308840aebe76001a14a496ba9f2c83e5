@@ -1,0 +1,7 @@
+Feature: Login Functionality 
+
+Scenario: Valid user should be able to login 
+
+Given User already on login page
+When User enter valid credentials
+Then User clicks on login button

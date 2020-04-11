@@ -1,0 +1,11 @@
+Feature: parabank Open New Account functionality 
+
+Scenario: Valid user should be able Open New Account 
+
+	Given user already in login page 
+	When user enter valid credentials 
+	Then user click on login button 
+	Then click on Open New Account page 
+	
+	
+	

@@ -1,0 +1,61 @@
+package stepDef;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.*;
+
+public class LoginPage {
+	
+	public WebDriver driver;
+	
+	@Given("^user already in login page$")
+	public void user_already_in_login_page(){
+		System.setProperty("webdriver.chrome.driver", ".\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		
+		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+	   
+	}
+
+	@When("^user enter valid credentials$")
+	public void user_enter_valid_credentials(){
+		driver.findElement(By.name("username")).sendKeys("testuser1");
+		driver.findElement(By.name("password")).sendKeys("Test@123");
+	   
+	}
+
+	@When("^user click on login button$")
+	public void user_click_on_login_button(){
+		driver.findElement(By.xpath("//input[@class='button']")).click();
+	    
+	}
+
+	@Then("^pagetitle should be{pageTitle}$")
+	public void pagetitle_should_be(String pageTitle){
+	    Assert.assertEquals(pageTitle, driver.getTitle());
+	}
+
+	@Then("^user click on logout button$")
+	public void user_click_on_logout_button(){
+		driver.findElement(By.xpath("//a[contains(text(),'Log Out')]")).click();
+		
+	}
+	
+	@Then("^user close the browser$")
+	public void user_close_the_browser(){
+		driver.close();
+	    
+	}
+
+
+
+}
