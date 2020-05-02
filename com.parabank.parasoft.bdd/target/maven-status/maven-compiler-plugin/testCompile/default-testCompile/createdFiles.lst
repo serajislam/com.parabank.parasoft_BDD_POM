@@ -1,0 +1,8 @@
+pages\AccountLocOverview.class
+stepDef\AccountOverview.class
+stepDef\LoginPage.class
+base\BaseClass.class
+stepDef\OpenNewAccount.class
+pages\OpenNewAccountLoc.class
+pages\LoginLocPage.class
+runner\TestRunner.class

@@ -1,0 +1,206 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Valid user should be able to view account overview",
+        "description": "",
+        "id": "parabank-account-overview-functionality;valid-user-should-be-able-to-view-account-overview",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 25509531500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user already login in Account Overview page",
+            "match": {
+              "location": "AccountOverview.user_already_login_in_Account_Overview_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 270366400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user click on Account Overview link",
+            "match": {
+              "location": "AccountOverview.user_click_on_Account_Overview_link()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3481848000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user should click on logout page",
+            "match": {
+              "location": "AccountOverview.user_should_click_on_logout_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "parabank Account Overview functionality",
+    "description": "",
+    "id": "parabank-account-overview-functionality",
+    "keyword": "Feature",
+    "uri": "accountOverview.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Valid user should be able to login successfully",
+        "description": "",
+        "id": "parabank-login-functionality;valid-user-should-be-able-to-login-successfully",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13508871200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user already in login page",
+            "match": {
+              "location": "LoginPage.user_already_in_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6162000900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enter valid credentials",
+            "match": {
+              "location": "LoginPage.user_enter_valid_credentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3436598100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on login button",
+            "match": {
+              "location": "LoginPage.user_click_on_login_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3423859899,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on logout button",
+            "match": {
+              "location": "LoginPage.user_click_on_logout_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "parabank login functionality",
+    "description": "",
+    "id": "parabank-login-functionality",
+    "keyword": "Feature",
+    "uri": "login.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Valid user should be able Open New Account",
+        "description": "",
+        "id": "parabank-open-new-account-functionality;valid-user-should-be-able-open-new-account",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24114822099,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user already in Account Overview page",
+            "match": {
+              "location": "OpenNewAccount.user_already_in_Account_Overview_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3388876799,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user click on Open New Account",
+            "match": {
+              "location": "OpenNewAccount.user_click_on_Open_New_Account()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3104201500,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on type of Account drop down and select account type",
+            "match": {
+              "location": "OpenNewAccount.user_click_on_type_of_Account_drop_down_and_select_account_type()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3075897200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "click on OPEN NEW ACCOUNT button",
+            "match": {
+              "location": "OpenNewAccount.click_on_OPEN_NEW_ACCOUNT_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3685825000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user click on logout page",
+            "match": {
+              "location": "OpenNewAccount.user_click_on_logout_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "parabank Open New Account functionality",
+    "description": "",
+    "id": "parabank-open-new-account-functionality",
+    "keyword": "Feature",
+    "uri": "openNewAccount.feature"
+  }
+]

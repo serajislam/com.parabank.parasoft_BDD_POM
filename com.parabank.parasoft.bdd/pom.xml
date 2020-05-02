@@ -5,6 +5,65 @@
 	<groupId>com.parabank.parasoft.bdd</groupId>
 	<artifactId>com.parabank.parasoft.bdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+
+	<build>
+		<plugins>
+
+
+			<plugin>
+				<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+				<groupId>net.masterthought</groupId>
+				<artifactId>cucumber-reporting</artifactId>
+				<version>2.8.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>com.parabank.parasoft</projectName>
+							<outputDirectory>${project.build.directory}/Report/cucumber-reports</outputDirectory>
+							 <!-- <cucumberOutput>${project.build.directory}/Cucumber/cucumber.json</cucumberOutput> -->
+							<jsonFiles>
+								<param>${project.build.directory}target/cucumber.json</param>
+							</jsonFiles>
+							<skippedFails>true</skippedFails>
+							<enableFlashCharts>true</enableFlashCharts>
+							<buildNumber>1.0</buildNumber>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+			</plugin>
+
+
+			<plugin>
+				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<includes>
+						<include>**/TestRunner*.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 		<dependency>

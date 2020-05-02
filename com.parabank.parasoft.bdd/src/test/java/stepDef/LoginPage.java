@@ -1,53 +1,52 @@
 package stepDef;
-
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
+import java.io.IOException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import base.BaseClass;
 import cucumber.api.java.en.*;
+import pages.LoginLocPage;
 
-public class LoginPage {
-	
+public class LoginPage extends BaseClass {
+
 	public WebDriver driver;
-	
+
+	LoginLocPage lp;
 
 	@Given("^user already in login page$")
-	public void user_already_in_login_page() {
-		System.setProperty("webdriver.chrome.driver", ".\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+	public void user_already_in_login_page() throws InterruptedException, IOException {
+
+		// Calling invokeBrowser method in BaseClass
+		driver = invokeBrowser();
+
+		// Calling LoginLocPage by creating object og LoginLocPage class
+		lp = new LoginLocPage(driver);
+
+		Thread.sleep(3000);
 
 	}
 
 	@When("^user enter valid credentials$")
 	public void user_enter_valid_credentials() throws InterruptedException {
+		lp.userName();
 		Thread.sleep(3000);
-		driver.findElement(By.name("username")).sendKeys("testuser1");
-		Thread.sleep(3000);
-		driver.findElement(By.name("password")).sendKeys("Test@123");
+		lp.passowrd();
 		Thread.sleep(3000);
 
 	}
 
 	@Then("^user click on login button$")
 	public void user_click_on_login_button() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@class='button']")).click();
+		lp.loginButton();
 		Thread.sleep(3000);
 
 	}
 
 	@Then("^user click on logout button$")
 	public void user_click_on_logout_button() throws InterruptedException {
-		driver.findElement(By.xpath("//a[contains(text(),'Log Out')]")).click();
+
+		lp.logoutButton();
 		Thread.sleep(3000);
 		driver.close();
 
 	}
-
 
 }
